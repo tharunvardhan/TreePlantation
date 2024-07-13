@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://wallpaperaccess.com/full/267434.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        h1, p {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative; /* Ensure positioning for overlay */
+            z-index: 2; /* Ensure text appears above the background image */
+        }
+
+        h1::before, p::before {
+            content: '';
+            position: absolute;
+            top: 10;
+            left: 60;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 255, 0.5); /* Adjust opacity and color as needed */
+            z-index: -1; /* Place behind the text */
+        }
+
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            z-index: 2; /* Place above the background image */
+        }
+
+        .menu-icon div {
+            width: 100%;
+            height: 4px;
+            background-color: #fff;
+            border-radius: 2px;
+        }
+
+        .menu {
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 2; /* Place above the background image */
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <h1><strong>TREE PLANTATION</strong></h1>
+    <p><strong>"To plant trees is to give body and life to one's dreams of a better world."</strong></p>
+    <div class="menu">
+        <a href="Explore.html">Home</a>
+        <a href="email.html">Email</a>
+        <a href="contact.html">Call Us</a>
+    </div>
+</body>
+</html>
+
